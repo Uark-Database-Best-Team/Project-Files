@@ -70,6 +70,7 @@ CREATE TABLE orders (
 	orderStatus char(10),
 	shippingAddressId integer,
 	billingAddressId integer,
+	price float,
 	creditCardId Integer,
 	customerId integer,
 	employeeId integer,
