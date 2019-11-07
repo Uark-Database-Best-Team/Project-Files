@@ -3,7 +3,9 @@
 INSERT INTO books (isbn, edition, category, title, year, price, publisher, authors)
 VALUES
 (1, 1, 'Horror', 'Nightmare in Seattle', 2018, 19.99, 'American Books', 'Tyler Tracy, Luke Brandon, Marshall Richards'),
-(2, 1, 'Mystery', 'I Spy', 2019, 24.99, 'Mystery Books R Us', 'Mr. Mystery'),
+(2, 1, 'Mystery', 'I Spy', 2019, 24.99, 'Mystery Books R Us', 'Nancy Drew'),
+(4, 1, 'Mystery', 'I cant spy', 2019, 22.99, 'Mystery Books R Us', 'Nancy Drew'),
+(5, 1, 'Mystery', 'Murder Murder Scary Murder', 2019, 20.99, 'Mystery Books R Us', 'Nancy Drew'),
 (3, 4, 'Non-Fiction', 'The Science of Reproduction', 2015, 29.99, 'Science Books Inc', 'Bill Nye');
 
 INSERT INTO addresses (addressId, zip, state, city, street)
@@ -43,16 +45,17 @@ VALUES
 (3, 2, 2, 2),
 (4, 1, 3, 3);
 
-INSERT INTO orders (orderId, creationDate, orderStatus, shippingAddressId, billingAddressId, creditCardId, employeeId, customerId)
+INSERT INTO orders (orderId, creationDate, orderStatus, shippingAddressId, billingAddressId, creditCardId, employeeId, customerId, price)
 VALUES
-(1, '2019-11-02', 'Shipped', 1, 1, 1, 1, 1),
-(4, '2019-11-04', 'Pending', 3, 3, 3, 1, 3),
-(5, '2019-11-04', 'Pending', 3, 3, 3, 1, 3),
-(2, '2019-11-03', 'Shipped', 2, 2, 2, 2, 2),
-(3, '2019-11-04', 'Pending', 3, 3, 3, 3, 3);
+(1, '2019-11-02', 'Shipped', 1, 1, 1, 1, 1, 12.55),
+(4, '2019-11-04', 'Pending', 3, 3, 3, 1, 3, 20.00),
+(5, '2019-11-04', 'Pending', 3, 3, 3, 1, 3, 100.50),
+(2, '2019-11-03', 'Shipped', 2, 2, 2, 2, 2, 35.50),
+(3, '2019-11-04', 'Pending', 3, 3, 3, 3, 3, 55.00);
 
 INSERT INTO orderedBooks(isbn, orderId, quantity)
 VALUES
 (1, 1, 1),
 (2, 2, 1),
 (3, 3, 1);
+

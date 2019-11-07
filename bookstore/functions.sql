@@ -28,6 +28,10 @@ INSERT INTO shoppingCart (cartId, cartName, customerId, createdDate, lastUpdated
 \! echo "Customer Function: Merge shopping cards";
 UPDATE shoppingCartItems SET cartId=42 WHERE cartId=1;
 
+-- Search for books based on author
+\! echo "Customer Function: Search for books based on author";
+SELECT title FROM books WHERE authors="Nancy Drew";
+
 -- Insert new books
 \! echo "Employee Function: Insert new books";
 INSERT INTO books (isbn, title, category, edition, price, publisher, authors, year) VALUES (42, "Murder Mystery", "Mystery", 1, 12.99, "Myster Publishers", "Nancy Drew", 2018);
@@ -36,11 +40,10 @@ INSERT INTO books (isbn, title, category, edition, price, publisher, authors, ye
 \! echo "Employee Function: List all book information";
 SELECT * FROM books WHERE title="Murder Mystery" AND authors="Nancy Drew";
 
--- List information about those orders assigned to him or her (given employeeId ‘a’)
+-- List information about those orders assigned to him or her (given employeeId ‘1’)
 \! echo "Employee Function: List information about orders assigned to employeeId 1";
 SELECT * FROM orders WHERE employeeId=1;
 
 -- Update order status
 \! echo "Employee Function: Updating order with id 42 to status Delivered";
 UPDATE orders SET orderStatus="Delivered" WHERE orderId=4;
-
