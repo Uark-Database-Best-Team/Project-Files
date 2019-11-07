@@ -1,6 +1,6 @@
 -- Create tables for the bookstore
 CREATE TABLE books (
-	isbn integer PRIMARY KEY,
+	isbn bigint PRIMARY KEY,
 	edition integer,
 	category varchar(20),
 	title varchar(100),
@@ -20,7 +20,7 @@ CREATE TABLE addresses(
 
 CREATE TABLE creditCards(
 	creditCardId int PRIMARY KEY,
-	number int,
+	number bigint,
 	ccv int,
 	expirationDate date,
 	name varchar(30)
@@ -29,7 +29,7 @@ CREATE TABLE creditCards(
 CREATE TABLE customers(
 	customerId int PRIMARY KEY,
 	accountId int,
-	phone int,
+	phone bigint,
 	name char(20),
 	email char(20),
 	password char(20),
@@ -48,7 +48,7 @@ CREATE TABLE employees (
 
 CREATE TABLE shoppingCart (
 	cartId integer PRIMARY KEY,
-	name varchar(30),
+	cartName varchar(30),
 	customerId integer not null,
 	createdDate datetime not null,
 	lastUpdatedDate datetime,
@@ -58,7 +58,7 @@ CREATE TABLE shoppingCart (
 CREATE TABLE shoppingCartItems(
 	cartItemId int PRIMARY KEY,
 	quantity int,
-	isbn int,
+	isbn bigint,
 	cartId int,
 	FOREIGN KEY (isbn) references books(isbn),
 	FOREIGN KEY (cartId) references shoppingCart(cartId)
@@ -81,7 +81,7 @@ CREATE TABLE orders (
 );
 
 CREATE TABLE orderedBooks (
-	isbn int,
+	isbn bigint,
 	orderId int NOT null,
 	quantity int NOT null,
 	PRIMARY KEY (isbn, orderId),
