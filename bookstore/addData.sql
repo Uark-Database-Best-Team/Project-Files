@@ -30,7 +30,7 @@ VALUES
 (2, "Jeff Rodgers", 2, 24000, 0),
 (3, "Steven Tyler", 3, 1450000, 0);
 
-INSERT INTO shoppingCart(cartId, name, customerId, createdDate, lastUpdatedDate)
+INSERT INTO shoppingCart(cartId, cartName, customerId, createdDate, lastUpdatedDate)
 VALUES
 (1, 'Summer Reading', 1, '2019-11-02', '2019-11-02'),
 (2, 'For Grandma', 2, '2019-11-03', '2019-11-03'),
@@ -46,6 +46,8 @@ VALUES
 INSERT INTO orders (orderId, creationDate, orderStatus, shippingAddressId, billingAddressId, creditCardId, employeeId, customerId)
 VALUES
 (1, '2019-11-02', 'Shipped', 1, 1, 1, 1, 1),
+(4, '2019-11-04', 'Pending', 3, 3, 3, 1, 3),
+(5, '2019-11-04', 'Pending', 3, 3, 3, 1, 3),
 (2, '2019-11-03', 'Shipped', 2, 2, 2, 2, 2),
 (3, '2019-11-04', 'Pending', 3, 3, 3, 3, 3);
 

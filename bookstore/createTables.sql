@@ -5,7 +5,7 @@ CREATE TABLE books (
 	category varchar(20),
 	title varchar(100),
 	year int,
-    	price float,
+    price float,
 	publisher varchar(30),
 	authors varchar(200)
 );
@@ -48,7 +48,7 @@ CREATE TABLE employees (
 
 CREATE TABLE shoppingCart (
 	cartId integer PRIMARY KEY,
-	name varchar(30),
+	cartName varchar(30),
 	customerId integer not null,
 	createdDate datetime not null,
 	lastUpdatedDate datetime,
